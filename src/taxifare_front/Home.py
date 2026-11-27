@@ -25,27 +25,27 @@ m.add_child(fl.LatLngPopup())
 
 out = st_folium(m, width=WIDTH, height=HEIGHT, key="map")
 
-st.session_state["current"]='start'
-st.session_state["start"]= "?"
-st.session_state["destination"] = "?"
+st.session_state.current='start'
+st.session_state.start = "?"
+st.session_state.destination = "?"
 
 st.write(f"going from {st.session_state["start"]} to {st.session_state["destination"]}")
 
-last_clicked = out.get("last_clicked")
-if last_clicked:
+st.session_state.click = out.get("last_clicked")
+if st.session_state.click:
     st.write("Hello")
-    coords = (last_clicked["lat"], last_clicked["lng"])
-    if st.session_state["current"] == "start":
+    coords = (st.session_state.click["lat"], st.session_state.click["lng"])
+    if st.session_state.current == "start":
         st.write("Darkness")
-        st.session_state["start"]= coords
-        st.session_state["current"] = "destination"
+        st.session_state.start = coords
+        st.session_state.current = "destination"
     else:
         st.write("My old friend")
-        st.session_state["destination"] = coords
-        st.session_state["current"] = "start"
+        st.session_state.destination = coords
+        st.session_state.current = "start"
     st.rerun()
 
-st.write(st.session_state["current"])
+st.write(st.session_state.current)
 
 
 "## Additionnal info"
