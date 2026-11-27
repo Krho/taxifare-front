@@ -22,7 +22,12 @@ WIDTH = 700
 
 "## Trajectory"
 
-start = st.number_input("Insert a number")
+start_lat = st.number_input("Lattitude start", -73.950655)
+start_long = st.number_input("Longitude start", 40.783282)
+
+
+end_lat = st.number_input("Lattitude end", -73.984365)
+end_long = st.number_input("Longitude end", 40.769802)
 
 
 # m = fl.Map(location=[48.859, 2.378], zoom_start=13)
@@ -69,12 +74,12 @@ passenger_count = st.slider("Number of passengers", 1, 8, 1)
 
 api = st.secrets["URL"]
 params = {
-    'pickup_datetime': '2013-07-06 17:18:00 UTC',
-    'pickup_longitude': -73.950655,
-    'pickup_latitude':  40.783282,
-    'dropoff_longitude': -73.984365,
-    'dropoff_latitude': 40.769802,
-    'passenger_count': 1
+    'pickup_datetime': str(input_time),
+    'pickup_longitude': start_long,
+    'pickup_latitude':  start_lat,
+    'dropoff_longitude': end_long,
+    'dropoff_latitude': end_lat,
+    'passenger_count': str(passenger_count)
     }
 
 
