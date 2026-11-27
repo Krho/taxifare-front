@@ -39,10 +39,12 @@ if st.session_state.click:
         st.write("Darkness")
         st.session_state.start = coords
         st.session_state.current = "destination"
+        st.session_state.click = None
     else:
         st.write("My old friend")
         st.session_state.destination = coords
         st.session_state.current = "start"
+        st.session_state.click = None
     st.rerun()
 
 st.write(st.session_state.current)

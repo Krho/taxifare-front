@@ -292,15 +292,6 @@ wheels = [
 ]
 
 [[package]]
-name = "leaflet"
-version = "0.0.3"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d7/bd/928d5a5b61b68c967623fde446cde659bc7b96fddfcb35e35e4108c1f599/leaflet-0.0.3.tar.gz", hash = "sha256:f906a59a3e06b8d3f8b81eedfe30340187119bbef2dbaa73b79588c79be369c1", size = 8939, upload-time = "2017-11-26T22:08:20.488Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/b4/f4/78fc5517099745c9d99a6a6afddd7a4d0d3f3c91c1be8710db392fc4a702/leaflet-0.0.3-py3-none-any.whl", hash = "sha256:654053f4728e8326a38a1e80ee6fbfdca30a2dbf388d27cefe55f5912e546fd7", size = 14446, upload-time = "2017-11-26T22:08:15.365Z" },
-]
-
-[[package]]
 name = "markupsafe"
 version = "3.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -921,15 +912,18 @@ wheels = [
 ]
 
 [[package]]
-name = "streamlit-leaflet"
-version = "0.1.0"
+name = "streamlit-folium"
+version = "0.28.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "branca" },
+    { name = "folium" },
+    { name = "jinja2" },
     { name = "streamlit" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5d/e4/e09587f490ec201d9ed1cbb1afceda8f3af6378eb624c2842f2f55ee7f91/streamlit-leaflet-0.1.0.tar.gz", hash = "sha256:06da606b4316c800aa222d8bea4fee41bcb695d039d387d18d6e2e497b022fbd", size = 498996, upload-time = "2022-10-11T14:58:38.472Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/60/a4/29480e4dce280bfd9e21719b5f83246d23f6da70e138efa7cca299187d97/streamlit_folium-0.28.0.tar.gz", hash = "sha256:ff51cc42c9f93afd47f59372e550a4cb70c7ecb05f870891045cf08bb877e6c8", size = 526226, upload-time = "2026-11-23T16:32:43.419Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/78/f72dbae65caec84f2172165a5d23981c265fe2c7a561a28050cabd2db40f/streamlit_leaflet-0.1.0-py3-none-any.whl", hash = "sha256:d1c78c2595b043896ef58b01a16d4b66770fcb90ebc78dfcbba0df65f08113ec", size = 505050, upload-time = "2022-10-11T14:58:36.329Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/17/25f1d377b6c6cb2a4caded1facb91a83e549374c5ede52dd7ca63ec146bd/streamlit_folium-0.28.0-py3-none-any.whl", hash = "sha256:6380d755b6ee436199fead430d46329d742a0de8c479cb05cf83396565fb2c9f", size = 528399, upload-time = "2026-11-23T16:32:42.047Z" },
 ]
 
 [[package]]
@@ -937,18 +931,14 @@ name = "taxifare-front"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "folium" },
-    { name = "leaflet" },
     { name = "streamlit" },
-    { name = "streamlit-leaflet" },
+    { name = "streamlit-folium" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "folium", specifier = ">=1.0.0" },
-    { name = "leaflet", specifier = ">=0.0.3" },
     { name = "streamlit", specifier = ">=1.67.0" },
-    { name = "streamlit-leaflet", specifier = ">=0.1.0" },
+    { name = "streamlit-folium", specifier = ">=0.28.0" },
 ]
 
 [[package]]
